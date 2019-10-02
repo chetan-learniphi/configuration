@@ -304,13 +304,13 @@ class Ec2Inventory(object):
                     self.add_instance(instance, region)
 
         except boto.exception.BotoServerError as e:
-            if  not self.eucalyptus:
+            if not self.eucalyptus:
                 print("Looks like AWS is down again:")
             print(e)
             sys.exit(1)
 
     def get_rds_instances_by_region(self, region):
-	''' Makes an AWS API call to the list of RDS instances in a particular
+        ''' Makes an AWS API call to the list of RDS instances in a particular
         region '''
 
         try:
@@ -355,7 +355,7 @@ class Ec2Inventory(object):
         if instance.subnet_id:
             dest = getattr(instance, self.vpc_destination_variable)
         else:
-            dest =  getattr(instance, self.destination_variable)
+            dest = getattr(instance, self.destination_variable)
 
         if not dest:
             # Skip instances we cannot address (e.g. private VPC subnet)
@@ -412,10 +412,10 @@ class Ec2Inventory(object):
             return
 
         # Select the best destination address
-        #if instance.subnet_id:
-            #dest = getattr(instance, self.vpc_destination_variable)
-        #else:
-            #dest =  getattr(instance, self.destination_variable)
+        # if instance.subnet_id:
+            # dest = getattr(instance, self.vpc_destination_variable)
+        # else:
+            # dest =  getattr(instance, self.destination_variable)
         dest = instance.endpoint[0]
 
         if not dest:
