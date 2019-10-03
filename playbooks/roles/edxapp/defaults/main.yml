@@ -289,6 +289,8 @@ EDXAPP_PROFILE_IMAGE_MAX_AGE: 31536000
 
 EDXAPP_PROFILE_IMAGE_MAX_BYTES: 1048576
 
+EDXAPP_ENABLE_COMPREHENSIVE_THEMING: false
+
 # Git repo for the comprehensive theme (if using a comprehensive theme
 # other than the ones bundled with edx/platform)
 EDXAPP_COMPREHENSIVE_THEME_SOURCE_REPO: ""
